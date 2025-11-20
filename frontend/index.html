@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AxieBreed Calculator</title>
+</head>
+<body style="font-family: Arial; padding: 20px;">
+    <h2>AxieBreed - Calculadora Genética</h2>
+
+    <h3>Subir archivos CSV de los padres</h3>
+
+    <form id="calcForm">
+        <label>Axie 1 CSV:</label>
+        <input type="file" id="axie1"><br><br>
+
+        <label>Axie 2 CSV:</label>
+        <input type="file" id="axie2"><br><br>
+
+        <button type="button" onclick="calculate()">Calcular genética</button>
+    </form>
+
+    <h3>Resultado:</h3>
+    <pre id="result"></pre>
+
+<script>
+async function calculate() {
+    let file1 = document.getElementById("axie1").files[0];
+    let file2 = document.getElementById("axie2").files[0];
+
+    let formData = new FormData();
+    formData.append("file1", file1);
+    formData.append("file2", file2);
+
+    let response = await fetch("/calculate/", {
+        method: "POST",
+        body: formData
+    });
+
+    let result = await response.json();
+    document.getElementById("result").textContent = JSON.stringify(result, null, 4);
+}
+</script>
+
+</body>
+</html>
