@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: axiebreed
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
