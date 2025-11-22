@@ -1,11 +1,15 @@
 {
-  "background_color": "#ffffff",
-  "dir": "ltr",
+  "name": "Axie Breed",
+  "short_name": "AxieBreed",
+  "start_url": "/",
   "display": "standalone",
-  "name": "AxieBreed",
-  "orientation": "any",
-  "scope": "/",
-  "short_name": "AXB",
-  "start_url": "/https://axiebreed-od2v.onrender.com/",
-  "theme_color": "#ffffff"
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "iconos/axie_en_huevo.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
 }
